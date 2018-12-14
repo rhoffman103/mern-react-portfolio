@@ -1,0 +1,65 @@
+.wrapper {
+  margin: 0 20px 0 20px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.teal-text {
+  color: #1edbed;
+}
+
+.teal-bg {
+  background-color: #159ba6;
+}
+
+.purple-bg {
+  background-color: #211621;
+}
+
+.royalblue-bg {
+  /* background-color: #031a6b; */
+  background-color: #101E40;
+}
+
+.light-grey-bg {
+  background-color: #e5e3eb;
+}
+
+/* Calus Colors */
+.calus-purple-bg {
+  background-color: #461044;
+}
+
+.calus-purple-text {
+  color: #461044;
+}
+
+.calus-platinum-bg {
+  background-color: #e6e6e6;
+}
+
+.calus-platinum-text {
+  color: #e6e6e6;
+}
+
+.calus-platinum-tint-bg {
+  background-color: #f2f2f2;
+}
+
+.calus-gold-bg {
+  background-color: #dbb979;
+}
+
+.calus-gold-text {
+  color: #dbb979;
+}
+
+.calus-tan-bg {
+  background-color: #ffdb8d;
+}
+
+.calus-tan-text {
+  color: #ffdb8d;
+}

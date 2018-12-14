@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "pathName": "pu-revu",
+        "title": "Pu Revu",
+        "image": "pu-revu.PNG",
+        "imageSlides": ["purevu-home.PNG", "purevu-write.PNG", "purevu-find.PNG", "purevu-read.PNG", "purevu-media.PNG"],
+        "preview": "Google Firebase webapp for desktop and mobile.",
+        "about": "PuRevu is a location based public restroom rating webapp. This app was built in week 8 of the UNH coding bootcamp with a team of 4. It uses firebase to store user ratings, comments and locations for quick retrieval by zip code. There are also cors supported api's that call for 'dad jokes, weather and New York Times articles' for user entertainment.",
+        "tags": ["firebase", "jquery", "API", "materialize css"],
+        "allTechnologies":["firebase", "materialize css", "jquery", "cors API"],
+        "applicationType": "full-stack",
+        "repoUrl": "https://github.com/rhoffman103/PuRevu",
+        "deployedUrl": "https://rhoffman103.github.io/PuRevu/"
+    },
+    {
+        "id": 2,
+        "pathName": "engram-collector",
+        "title": "Engram Collector",
+        "image": "engrams.PNG",
+        "imageSlides": ["engram-play.PNG", "engram-win.PNG"],
+        "preview": "A front-end webapp numbers game built with javaScript, Bootstrap, and jQuery.",
+        "about": "Crystal Collector is a front-end application game built with jQuery and BootStrap.",
+        "tags": ["bootstrap", "jquery"],
+        "allTechnologies":["JavaScript", "Bootstrap", "jQuery"],
+        "applicationType": "Front-end",
+        "repoUrl": "https://github.com/rhoffman103/unit-4-game",
+        "deployedUrl": "https://rhoffman103.github.io/unit-4-game/"
+    }
+]

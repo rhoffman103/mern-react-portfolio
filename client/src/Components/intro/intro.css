@@ -1,0 +1,77 @@
+/* .intro {
+    background-color: #1f1b24;
+} */
+
+.intro {
+    /* background: 
+        linear-gradient(45deg,  transparent 0%, transparent 57%, #f2f2f2 100%),
+        linear-gradient(-45deg, #e6e6e6 0%,  #dbb979 0.3%, #e6e6e6 112%,  transparent 11% ),
+        linear-gradient(-90deg, #e6e6e6 100%, #e6e6e6 65%, transparent 20% )
+        ; */
+    background: #e6e6e6;
+}
+
+.royalblue-bg {
+    /* background-color: #031a6b; */
+    background-color: #386ee8;
+}
+
+.my-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.flex p {
+    font-size: 30px;
+}
+
+.spacer {
+    height: 100vh;
+    padding-top: 100px;
+}
+
+.teal-btn {
+    background-color: transparent;
+    color: #55DDE0;
+    border: 1px solid #55DDE0;
+}
+
+/* .teal-btn {
+    background-color: transparent;
+    color: #3BB273;
+    border: 1px solid #3BB273;
+} */
+
+.teal-btn:hover {
+    color: #e5e3eb;
+    background-color: #55DDE0;
+}
+
+.green-text {
+    color: #3BB273;
+    /* color: #55f855; */
+    /* color: #55DDE0; */
+    /* color: #3cbd8f; */
+}
+
+.blue-text {
+    color: #386ee8;
+}
+
+.silver-bg {
+    background-color: #C0C0C0;
+}
+
+.transparent-btn {
+    background-color: transparent;
+}
+
+.transparent-btn:hover {
+    background-color: #461044;
+}
+
+.btn-border-gold {
+    border: 1px solid #dbb979;
+}

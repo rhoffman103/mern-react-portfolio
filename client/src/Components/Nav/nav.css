@@ -1,0 +1,18 @@
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.calus-nav-text {
+  color: #e6e6e6 !important;
+}
+
+.navbar-nav .calus-nav-text:hover  {
+  color: #dbb979 !important;
+}
+
+.nav-border-gold {
+  border-bottom: 0.5em solid #dbb979;
+}
+
