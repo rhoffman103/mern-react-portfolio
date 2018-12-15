@@ -8,6 +8,8 @@ import Recources from '../../Components/portfolioPageComponents/Recources';
 import Footer from '../../Components/Footer';
 import NoMatch from "../../pages/NoMatch";
 import Arrow from '../../Components/ImageCarousel/Arrow';
+import MainJS from '../../utils/main';
+import API from '../../utils/API';
 
 class Portfolio extends Component {
     constructor(props) {
@@ -15,6 +17,7 @@ class Portfolio extends Component {
         this.state = {
             project: "",
             projectList,
+            mongoProjects: null,
             currentProject: null,
             noMatch: false,
             currentProjectIndex: 0
@@ -28,38 +31,44 @@ class Portfolio extends Component {
     }
 
     findProjectMatch = () => {
-        // let whitespaceRegex = /\s/gi;
-        let currentProjectPathname = window.location.pathname.split("/").pop();
-        projectList.forEach((element, index) => {
-            // element.title.toLowerCase().replace(whitespaceRegex, '-')
-            if ( currentProjectPathname === element.pathName) {
-                const lastIndex = this.state.projectList.length -1;
-                const shouldResetIndexPrev = index === 0;
-                const shouldResetIndexNext = index === lastIndex;
-                const prevIndex = shouldResetIndexPrev ? lastIndex : index - 1;
-                const nextIndex = shouldResetIndexNext ? 0 : index + 1;
-                
-                this.setState({
-                    currentProject: element,
-                    currentProjectIndex: index,
-                    previousProjectIndex: prevIndex,
-                    nextProjectIndex: nextIndex
-                })
-            }
-            else {
-                this.setState({
-                    noMatch: true
+        API.getProjectsList().then(res => {
+            if (res.data.length > 0) {
+                const mongoProjects = res.data;
+                // let whitespaceRegex = /\s/gi;
+                let currentProjectPathname = window.location.pathname.split("/").pop();
+                mongoProjects.forEach((element, index) => {
+                    // element.title.toLowerCase().replace(whitespaceRegex, '-')
+                    if ( currentProjectPathname === element.pathName) {
+                        const lastIndex = mongoProjects.length -1;
+                        const shouldResetIndexPrev = index === 0;
+                        const shouldResetIndexNext = index === lastIndex;
+                        const prevIndex = shouldResetIndexPrev ? lastIndex : index - 1;
+                        const nextIndex = shouldResetIndexNext ? 0 : index + 1;
+                        
+                        this.setState({
+                            mongoProjects: mongoProjects,
+                            currentProject: element,
+                            currentProjectIndex: index,
+                            previousProjectIndex: prevIndex,
+                            nextProjectIndex: nextIndex
+                        })
+                    }
+                    else {
+                        this.setState({
+                            noMatch: true
+                        })
+                    }
                 })
             }
         })
     }
 
     previousProject = () => {
-        window.location.href = `/portfolio/${this.state.projectList[this.state.previousProjectIndex].pathName}`;
+        window.location.href = `/portfolio/${this.state.mongoProjects[this.state.previousProjectIndex].pathName}`;
     }
 
     nextProject = () => {
-        window.location.href = `/portfolio/${this.state.projectList[this.state.nextProjectIndex].pathName}`;
+        window.location.href = `/portfolio/${this.state.mongoProjects[this.state.nextProjectIndex].pathName}`;
     }
 
     render() {
@@ -79,7 +88,7 @@ class Portfolio extends Component {
                                 clickFunction={this.previousProject}
                                 glyph="&#9664;"
                                 arrowPosition="fixed-arrow"
-                                projectName={this.state.projectList[this.state.previousProjectIndex].title}
+                                projectName={this.state.mongoProjects[this.state.previousProjectIndex].title}
                             />
                             <h1>{this.state.currentProject.title}</h1>
                             <p>{this.state.currentProject.preview}</p>
@@ -101,7 +110,7 @@ class Portfolio extends Component {
                                 clickFunction={this.nextProject}
                                 glyph="&#9654;"
                                 arrowPosition="fixed-arrow"
-                                projectName={this.state.projectList[this.state.nextProjectIndex].title}
+                                projectName={this.state.mongoProjects[this.state.nextProjectIndex].title}
                             />
                         </div>
                         <Footer />

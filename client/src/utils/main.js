@@ -1,3 +1,5 @@
+import API from './API';
+
 export default {
 
     // Smooth Scrolling
@@ -39,4 +41,16 @@ export default {
         let element = document.getElementById(target);
         element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     },
+
+    getProjects: (_this) => {
+        API.getProjectsList().then(res => {
+            console.log(res)
+            if (res.data.length > 0) {
+                _this.setState({
+                    mongoProjects: res.data
+                })
+            }
+        })
+    },
+
 };

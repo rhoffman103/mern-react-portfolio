@@ -20,18 +20,8 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        this.getProjects();
-    }
-
-    getProjects = () => {
-        API.getProjectsList().then(res => {
-            console.log(res.data)
-            if (res.data.length > 0) {
-                this.setState({
-                    mongoProjects: res.data
-                })
-            }
-        })
+        // this.postProject();
+        MainJS.getProjects(this);
     }
 
     postProject = () => {
