@@ -26,5 +26,19 @@
         "applicationType": "Front-end",
         "repoUrl": "https://github.com/rhoffman103/unit-4-game",
         "deployedUrl": "https://rhoffman103.github.io/unit-4-game/"
+    },
+    {
+        "id": 3,
+        "pathName": "plexx",
+        "title": "Plexx",
+        "image": "plexx-card.PNG",
+        "imageSlides": ["plexx.PNG", "plexx-signup.PNG", "plexx-signin.PNG"],
+        "preview": "A full-stack webapp game built with ReactJS, Phaser, Materialize css and Express.",
+        "about": "Plexx is a full-stack webapp project built with a team of 4. It features a game built with Phaser 2, and a user membership built with PassportJs for storing user scores.",
+        "tags": ["full-stack", "react js", "my SQL", "passport js", "materialize css", "phaser 2"],
+        "allTechnologies":["mySQL", "Passport js", "React js", "Materialize css", "Phaser 2", "Express"],
+        "applicationType": "Full-stack",
+        "repoUrl": "https://github.com/scottasawyer/plexx",
+        "deployedUrl": "http://plexx.herokuapp.com/"
     }
 ]

@@ -5,7 +5,7 @@ import AboutMe from '../../Components/About';
 import Portfolio from '../../Components/Portfolio';
 import ProjectList from '../../Components/ProjectList';
 import Footer from '../../Components/Footer';
-import projectsArray from '../../projects.json';
+// import projectsArray from '../../projects.json';
 import MainJS from '../../utils/main';
 import API from '../../utils/API';
 
@@ -25,16 +25,17 @@ class Home extends Component {
 
     getProjects = () => {
         API.getProjectsList().then(res => {
-            this.setState({
-                mongoProjects: res.data,
-                fetchedProjects: true
-            })
+            console.log(res.data)
+            if (res.data.length > 0) {
+                this.setState({
+                    mongoProjects: res.data
+                })
+            }
         })
     }
 
     postProject = () => {
         const project = {
-            "id": 1,
             "pathName": "pu-revu",
             "title": "Pu Revu",
             "image": "pu-revu.PNG",
