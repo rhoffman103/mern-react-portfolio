@@ -1,8 +1,8 @@
 import React from 'react';
-import './portfolio.css';
+import './projectsGrid.css';
 
-const Portfolio = (props) => (
-    <div className="container spacer" id="portfolio">
+const ProjectsGrid = (props) => (
+    <div className="container projects-section" id="portfolio">
         <div className="wrapper">
             <div className="portfolio">
                 <h2>Portfolio</h2>
@@ -14,4 +14,4 @@ const Portfolio = (props) => (
     </div>
 )
 
-export default Portfolio;
+export default ProjectsGrid;

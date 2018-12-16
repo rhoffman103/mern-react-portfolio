@@ -8,7 +8,6 @@ import Recources from '../../Components/portfolioPageComponents/Recources';
 import Footer from '../../Components/Footer';
 import NoMatch from "../../pages/NoMatch";
 import Arrow from '../../Components/ImageCarousel/Arrow';
-import MainJS from '../../utils/main';
 import API from '../../utils/API';
 
 class Portfolio extends Component {

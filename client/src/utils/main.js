@@ -44,7 +44,6 @@ export default {
 
     getProjects: (_this) => {
         API.getProjectsList().then(res => {
-            console.log(res)
             if (res.data.length > 0) {
                 _this.setState({
                     mongoProjects: res.data

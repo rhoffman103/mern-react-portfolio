@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../../Components/Nav';
 import Intro from '../../Components/intro';
 import AboutMe from '../../Components/About';
-import Portfolio from '../../Components/Portfolio';
+import ProjectsGrid from '../../Components/ProjectsGrid';
 import ProjectList from '../../Components/ProjectList';
 import Footer from '../../Components/Footer';
 // import projectsArray from '../../projects.json';
@@ -53,7 +53,7 @@ class Home extends Component {
                     smoothScroll={MainJS.scrollToSection}
                 />
                 <AboutMe />
-                <Portfolio>
+                <ProjectsGrid>
                     {this.state.mongoProjects ?
                     <ProjectList
                         projects={this.state.mongoProjects}
@@ -62,7 +62,7 @@ class Home extends Component {
                     <div>something went wrong fetching projects</div>
                     }
 
-                </Portfolio>
+                </ProjectsGrid>
                 <Footer />
             </React.Fragment>
         )
