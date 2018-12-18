@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Nav from '../../Components/Nav';
 import Intro from '../../Components/intro';
 import AboutMe from '../../Components/About';
+import Skills from '../../Components/Skills';
 import ProjectsGrid from '../../Components/ProjectsGrid';
 import ProjectList from '../../Components/ProjectList';
 import Footer from '../../Components/Footer';
-// import projectsArray from '../../projects.json';
 import MainJS from '../../utils/main';
 import API from '../../utils/API';
 
@@ -51,8 +51,11 @@ class Home extends Component {
                 />
                 <Nav 
                     smoothScroll={MainJS.scrollToSection}
+                    homePage={true}
                 />
-                <AboutMe />
+                <AboutMe>
+                    <Skills />
+                </AboutMe>
                 <ProjectsGrid>
                     {this.state.mongoProjects ?
                     <ProjectList

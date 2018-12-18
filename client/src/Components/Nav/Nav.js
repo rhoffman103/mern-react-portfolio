@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Navbar, NavItem } from 'react-materialize';
 import './nav.css';
 
 const Nav = (props) => (
@@ -10,17 +9,22 @@ const Nav = (props) => (
                     aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
+                <div className="collapse navbar-collapse ml-20" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
                             <a className="nav-link calus-nav-text" href="/">Home <span className="sr-only">(current)</span></a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link calus-nav-text" href="#about" onClick={props.smoothScroll} data-scroll-to="about-me">About</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link calus-nav-text" href="#Portfolio" onClick={props.smoothScroll} data-scroll-to="portfolio">Portfolio</a>
-                        </li>
+                        { props.homePage &&
+                            <React.Fragment>
+                                <li className="nav-item">
+                                    <a className="nav-link calus-nav-text" href="#about" onClick={props.smoothScroll} data-scroll-to="about-me">About</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link calus-nav-text" href="#Portfolio" onClick={props.smoothScroll} data-scroll-to="portfolio">Portfolio</a>
+                                </li>
+                            </React.Fragment>
+                        }
+                        
                     </ul>
                 </div>
         </div>

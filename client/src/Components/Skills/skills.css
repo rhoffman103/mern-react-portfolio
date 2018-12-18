@@ -1,0 +1,71 @@
+.skills-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 15px 0 0 0;
+}
+
+.hex .skills-list {
+    margin: 35px 0 0 0;
+}
+
+.skills-list li {
+    padding: 0;
+    text-align: center;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.flex-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* max-height: 100vh; */
+  margin: 0 auto;
+}
+
+/* hexagon */
+
+.hex {
+    display: inline-block;
+    position: relative;
+    background-color: #529e42;
+    height: 200px;
+    width: 200px;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hex .inner {
+    position: absolute;
+    background-color: #f2f2f2;
+    top: 6px;
+    left: 6px;
+    height: 188px;
+    width: 188px;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* pentagon */
+
+.pentagon {
+    display: inline-block;
+    position: relative;
+    background-color: #e44d26;
+    height: 200px;
+    width: 200px;
+    -webkit-clip-path: polygon(50% 100%, 90% 85%, 100% 0, 0 0, 10% 85%);
+    clip-path: polygon(50% 100%, 90% 85%, 100% 0, 0 0, 10% 85%);
+}
+
+.pentagon .inner {
+    position: absolute;
+    background-color: #f2f2f2;
+    top: 6px;
+    left: 6px;
+    height: 188px;
+    width: 188px;
+    -webkit-clip-path: polygon(50% 100%, 90% 85%, 100% 0, 0 0, 10% 85%);
+    clip-path: polygon(50% 100%, 90% 85%, 100% 0, 0 0, 10% 85%);
+}

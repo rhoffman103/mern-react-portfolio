@@ -1,3 +1,21 @@
+.my-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.flex p {
+    font-size: 30px;
+}
+
+.spacer {
+    height: 100vh;
+    padding-top: 100px;
+}
+
+/* COLORING */
+
 /* .intro {
     background-color: #1f1b24;
 } */
@@ -14,22 +32,6 @@
 .royalblue-bg {
     /* background-color: #031a6b; */
     background-color: #386ee8;
-}
-
-.my-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.flex p {
-    font-size: 30px;
-}
-
-.spacer {
-    height: 100vh;
-    padding-top: 100px;
 }
 
 .teal-btn {
