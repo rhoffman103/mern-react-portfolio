@@ -6,15 +6,14 @@ const About = (props) => (
         <div className="container">
             <div className="wrapper">
                 <div className="about-me">
-                    <h2>About Me</h2>
+                    <h2>About</h2>
                     <hr />
 
                     <div className="row">
                         <div className="col-md-6 col-sm-12">
                             <div className="">
-                                <p>Im Bobby</p>
-                                <p>Short ribs hamburger chuck shank chicken. Prosciutto shankle strip steak leberkas cupim andouille sausage frankfurter jowl short loin. Shankle buffalo landjaeger strip steak brisket, cupim jerky. Tail chicken fatback prosciutto spare ribs. Buffalo fatback swine, turkey tri-tip jowl sausage brisket ham.</p>
-                                <p>Spare ribs cow short ribs sausage corned beef capicola chuck ham. Burgdoggen boudin ham cow chuck chicken bresaola capicola pancetta sausage strip steak pork chop tenderloin alcatra kielbasa. Beef drumstick strip steak leberkas short loin, corned beef ball tip hamburger rump sirloin jerky pastrami bacon burgdoggen. Ham corned beef buffalo landjaeger doner picanha cow andouille pancetta sirloin tenderloin hamburger.</p>
+                                <p>As a life long tinkerer, I've never been too shy to get my hands dirty. This same trait applies to coding. I'll dig in and see the project through.</p>
+                                <p>Check out my latest projects below.</p>
                             </div>
                             <div className="icons">
                                 <ul className="icon-list justify-content-center">
