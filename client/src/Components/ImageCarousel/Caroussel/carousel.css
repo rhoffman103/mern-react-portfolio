@@ -1,6 +1,5 @@
 .carousel {
     margin: 0 auto;
-    /* width: 66%; */
 }
 
 .image-slide {
@@ -25,8 +24,12 @@
     color: #159ba6;
 	cursor: pointer;
 	font-size: 2rem;
-	position: fixed !important;
-	top: 50% !important;
+	position: relative;
+    display: inline;
+}
+
+.projects-carousel {
+    padding-bottom: 4rem;
 }
 
 .project-slide-name {
@@ -40,21 +43,15 @@
     opacity: 1;
 }
 
-.slide-arrow.right, .fixed-arrow.right {
+.slide-arrow.right {
 	right: 1rem;
 }
 
-.slide-arrow.left, .fixed-arrow.left {
+.slide-arrow.left {
 	left: 1rem;
 }
+
 
 .sharp-shadow {
     box-shadow: 4px 4px 4px #2d1d2d;
 }
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
-    .carousel {
-        width: 100%;
-    }
-} 

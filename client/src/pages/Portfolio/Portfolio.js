@@ -7,8 +7,10 @@ import Technologies from '../../Components/portfolioPageComponents/Technologies'
 import Recources from '../../Components/portfolioPageComponents/Recources';
 import Footer from '../../Components/Footer';
 import NoMatch from "../../pages/NoMatch";
-import Arrow from '../../Components/ImageCarousel/Arrow';
+// import Arrow from '../../Components/ImageCarousel/Arrow';
+import ProjectArrows from '../../Components/portfolioPageComponents/ProjectArrows';
 import API from '../../utils/API';
+import '../../breakpoints.css';
 
 class Portfolio extends Component {
     constructor(props) {
@@ -71,25 +73,14 @@ class Portfolio extends Component {
     }
 
     render() {
-        
-        const style = {
-            maxWidth: 60 + "%"
-        }
 
         return (
             <div  className="calus-platinum-tint-bg">
                 {this.state.currentProject ?
                     <React.Fragment>
                         <Nav />
-                        <div className="container" style={style}>
-                            <Arrow
-                                direction="left"
-                                clickFunction={this.previousProject}
-                                glyph="&#9664;"
-                                arrowPosition="fixed-arrow"
-                                projectName={this.state.mongoProjects[this.state.previousProjectIndex].title}
-                            />
-                            <h1>{this.state.currentProject.title}</h1>
+                        <div className="container restricted-width">
+                            <h1 className="mt-1">{this.state.currentProject.title}</h1>
                             <p>{this.state.currentProject.preview}</p>
                             <Carousel 
                                 currentProject={this.state.currentProject}
@@ -104,12 +95,12 @@ class Portfolio extends Component {
                                 deployed={this.state.currentProject.deployedUrl}
                                 repo={this.state.currentProject.repoUrl}
                             />
-                            <Arrow
-                                direction="right"
-                                clickFunction={this.nextProject}
-                                glyph="&#9654;"
-                                arrowPosition="fixed-arrow"
-                                projectName={this.state.mongoProjects[this.state.nextProjectIndex].title}
+                            <hr></hr>
+                            <ProjectArrows 
+                                previousProject={this.previousProject}
+                                nextProject={this.nextProject}
+                                viewNextProject={this.state.mongoProjects[this.state.previousProjectIndex].title}
+                                viewPreviousProject={this.state.mongoProjects[this.state.nextProjectIndex].title}
                             />
                         </div>
                         <Footer />
