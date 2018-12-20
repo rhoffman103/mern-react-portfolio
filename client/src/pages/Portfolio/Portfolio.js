@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import projectList from '../../projects.json';
+// import projectList from '../../projects.json';
 import Nav from '../../Components/Nav';
+import Spinner from '../../Components/Spinner';
 import Carousel from '../../Components/ImageCarousel/Caroussel';
 import AboutProject from '../../Components/portfolioPageComponents/AboutProject';
 import Technologies from '../../Components/portfolioPageComponents/Technologies';
 import Recources from '../../Components/portfolioPageComponents/Recources';
 import Footer from '../../Components/Footer';
 import NoMatch from "../../pages/NoMatch";
-// import Arrow from '../../Components/ImageCarousel/Arrow';
 import ProjectArrows from '../../Components/portfolioPageComponents/ProjectArrows';
 import API from '../../utils/API';
 import '../../breakpoints.css';
@@ -17,11 +17,12 @@ class Portfolio extends Component {
         super(props);
         this.state = {
             project: "",
-            projectList,
+            // projectList,
             mongoProjects: null,
             currentProject: null,
             noMatch: false,
-            currentProjectIndex: 0
+            currentProjectIndex: 0,
+            loading: true,
         }
         this.nextProject = this.nextProject.bind(this);
         this.previousProject = this.previousProject.bind(this);
@@ -51,12 +52,14 @@ class Portfolio extends Component {
                             currentProject: element,
                             currentProjectIndex: index,
                             previousProjectIndex: prevIndex,
-                            nextProjectIndex: nextIndex
+                            nextProjectIndex: nextIndex,
+                            loading: false
                         })
                     }
                     else {
                         this.setState({
-                            noMatch: true
+                            noMatch: true,
+                            loading: false
                         })
                     }
                 })
@@ -76,7 +79,16 @@ class Portfolio extends Component {
 
         return (
             <div  className="calus-platinum-tint-bg">
-                {this.state.currentProject ?
+                {this.state.loading ?
+                    <React.Fragment>
+                        <Nav />
+                        <div className="container spacer">
+                            <Spinner />
+                        </div>
+                        <Footer />
+                    </React.Fragment>
+                :
+                (this.state.currentProject ?
                     <React.Fragment>
                         <Nav />
                         <div className="container restricted-width">
@@ -108,7 +120,7 @@ class Portfolio extends Component {
                     :
                     <div className="container">
                         <NoMatch />
-                    </div>
+                    </div>)
                 }
             </div>
         )
