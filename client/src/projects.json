@@ -40,5 +40,19 @@
         "applicationType": "Full-stack",
         "repoUrl": "https://github.com/scottasawyer/plexx",
         "deployedUrl": "http://plexx.herokuapp.com/"
+    },
+    {
+        "id": 4,
+        "pathName": "eat-da-burger",
+        "title": "Eat-Da-Burger",
+        "image": "burger-card.PNG",
+        "imageSlides": ["burger-top.PNG", "burger-bottom.PNG"],
+        "preview": "A full-stack single page webapp built with mySQL, jQuery, Bootstrap and Express.",
+        "about": "'Eat-Da-Burger' is a restaurant app that lets users input the names of burgers they'd like to eat. It uses mySQL and Handlebars to render the page with all the stored burgers.",
+        "tags": ["full-stack", "mySQL", "jQuery", "Bootstrap", "Handlebars"],
+        "allTechnologies":["mySQL", "Sequelize", "Handlebars", "jQuery", "Bootstrap", "Express"],
+        "applicationType": "Full-stack",
+        "repoUrl": "https://github.com/rhoffman103/eat-da-burger",
+        "deployedUrl": "http://bh-eat-da-burger.herokuapp.com/"
     }
 ]
