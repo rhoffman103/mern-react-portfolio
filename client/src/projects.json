@@ -49,10 +49,52 @@
         "imageSlides": ["burger-top.PNG", "burger-bottom.PNG"],
         "preview": "A full-stack single page webapp built with mySQL, jQuery, Bootstrap and Express.",
         "about": "'Eat-Da-Burger' is a restaurant app that lets users input the names of burgers they'd like to eat. It uses mySQL and Handlebars to render the page with all the stored burgers.",
-        "tags": ["full-stack", "mySQL", "jQuery", "Bootstrap", "Handlebars"],
+        "tags": ["full-stack", "my SQL", "jQuery", "Bootstrap", "Handlebars"],
         "allTechnologies":["mySQL", "Sequelize", "Handlebars", "jQuery", "Bootstrap", "Express"],
         "applicationType": "Full-stack",
         "repoUrl": "https://github.com/rhoffman103/eat-da-burger",
         "deployedUrl": "http://bh-eat-da-burger.herokuapp.com/"
+    },
+    {
+        "id": 5,
+        "pathName": "mongo-scraper",
+        "title": "Mongo Scraper",
+        "image": "mongo-scrape-card.PNG",
+        "imageSlides": ["mongo-scrape-home.PNG", "mongo-scrape-notes.PNG", "mongo-scraper-hacker-news.PNG"],
+        "preview": "A full-stack web scraper built with mongoDB, Handlebars, Express, and Cherio.",
+        "about": "'Mongo Scraper' is a web scraper that lets users view and leave comments on the latest articles from Hacker News and Echo JS. It uses Cheerio to scrape a site, MongoDB for storing saved articles and notes while Handlebars renders the app.",
+        "tags": ["full-stack", "Mongo DB", "jQuery", "Bootstrap", "Handlebars", "Cheerio"],
+        "allTechnologies":["MongoDB", "Mongoose", "Handlebars", "jQuery", "Bootstrap", "Express", "Cheerio", "Axios"],
+        "applicationType": "Full-stack",
+        "repoUrl": "https://github.com/rhoffman103/mongo-scrape",
+        "deployedUrl": "https://bh-mongo-scraper.herokuapp.com/"
+    },
+    {
+        "id": 6,
+        "pathName": "blue-it",
+        "title": "Blue It",
+        "image": "blueit-card.PNG",
+        "imageSlides": ["blueit-home.PNG", "blueit-user.PNG"],
+        "preview": "A social networking app",
+        "about": "'Blue It' is a social networking webapp built with a team of 4. Users and create accounts, make short message posts, and search for other users.",
+        "tags": ["full-stack", "my SQL", "jQuery", "Materialize css", "Handlebars", "Passport"],
+        "allTechnologies":["mySQL", "Sequelize", "Handlebars", "jQuery", "Materialize CSS", "Express", "Passport JS", "Express-Sessions"],
+        "applicationType": "Full-stack",
+        "repoUrl": "https://github.com/rhoffman103/project-2",
+        "deployedUrl": "http://blueit313.herokuapp.com/"
+    },
+    {
+        "id": 7,
+        "pathName": "my-portfolio",
+        "title": "MERN React Portfolio",
+        "image": "portfolio-card.PNG",
+        "imageSlides": ["portfolio-about.PNG"],
+        "preview": "This portfolio is built with MongoDB and React, intended to showcase my recent projects as a web developer.",
+        "about": "This Project is built with React in the frontend with NodeJs and Express acting as the server while. Axios is used to handle the AJAX requests to carry most of the sites content stored in MongoDB.",
+        "tags": ["full-stack", "Mongo DB", "Mongoose", "React JS", "Axios", "Bootstrap"],
+        "allTechnologies":["Mongo DB", "Mongoose", "React JS", "Axios", "Bootstrap", "Express", "React-Router-Dom"],
+        "applicationType": "Full-stack",
+        "repoUrl": "https://github.com/rhoffman103/mern-react-portfolio",
+        "deployedUrl": "http://bobby-hoffman.herokuapp.com/"
     }
 ]
