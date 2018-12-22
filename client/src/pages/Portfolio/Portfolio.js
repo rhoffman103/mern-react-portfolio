@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import projectList from '../../projects.json';
 import Nav from '../../Components/Nav';
 import Spinner from '../../Components/Spinner';
-import Carousel from '../../Components/ImageCarousel/Caroussel';
+import CarouselSlider from '../../Components/CarouselSlider/SlickSlider';
 import AboutProject from '../../Components/portfolioPageComponents/AboutProject';
 import Technologies from '../../Components/portfolioPageComponents/Technologies';
 import Recources from '../../Components/portfolioPageComponents/Recources';
@@ -10,6 +9,7 @@ import Footer from '../../Components/Footer';
 import NoMatch from "../../pages/NoMatch";
 import ProjectArrows from '../../Components/portfolioPageComponents/ProjectArrows';
 import API from '../../utils/API';
+import './portfolio.css';
 import '../../breakpoints.css';
 
 class Portfolio extends Component {
@@ -17,9 +17,9 @@ class Portfolio extends Component {
         super(props);
         this.state = {
             project: "",
-            // projectList,
             mongoProjects: null,
             currentProject: null,
+            imgUrls: null,
             noMatch: false,
             currentProjectIndex: 0,
             loading: true,
@@ -50,6 +50,7 @@ class Portfolio extends Component {
                         this.setState({
                             mongoProjects: mongoProjects,
                             currentProject: element,
+                            imgUrls: element.imageSlides,
                             currentProjectIndex: index,
                             previousProjectIndex: prevIndex,
                             nextProjectIndex: nextIndex,
@@ -94,8 +95,8 @@ class Portfolio extends Component {
                         <div className="container restricted-width">
                             <h1 className="mt-1">{this.state.currentProject.title}</h1>
                             <p>{this.state.currentProject.preview}</p>
-                            <Carousel 
-                                currentProject={this.state.currentProject}
+                            <CarouselSlider
+                                items={this.state.imgUrls}
                             />
                             <AboutProject
                                 about={this.state.currentProject.about}

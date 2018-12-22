@@ -1,0 +1,21 @@
+.slide-arrow {
+	color: #159ba6;
+	cursor: pointer;
+	font-size: 2rem;
+	position: absolute;
+	bottom: 45%;
+}
+
+.right-arrow {
+    z-index: 1;
+	right: 1rem;
+}
+
+.left-arrow {
+    z-index: 1;
+	left: 1rem;
+}
+
+.sharp-shadow {
+    box-shadow: 4px 4px 4px #2d1d2d;
+}
