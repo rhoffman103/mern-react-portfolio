@@ -112,8 +112,8 @@ class Portfolio extends Component {
                             <ProjectArrows 
                                 previousProject={this.previousProject}
                                 nextProject={this.nextProject}
-                                viewNextProject={this.state.mongoProjects[this.state.previousProjectIndex].title}
-                                viewPreviousProject={this.state.mongoProjects[this.state.nextProjectIndex].title}
+                                viewNextProject={this.state.mongoProjects[this.state.nextProjectIndex].title}
+                                viewPreviousProject={this.state.mongoProjects[this.state.previousProjectIndex].title}
                             />
                         </div>
                         <Footer />
