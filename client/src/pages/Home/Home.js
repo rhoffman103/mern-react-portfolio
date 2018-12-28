@@ -8,6 +8,7 @@ import ProjectList from '../../Components/ProjectList';
 import Footer from '../../Components/Footer';
 import MainJS from '../../utils/main';
 import API from '../../utils/API';
+import ReactGA from 'react-ga';
 
 import '../../App.css';
 
@@ -21,7 +22,13 @@ class Home extends Component {
 
     componentDidMount() {
         // this.postProject();
+        this.initializeReactGA();
         MainJS.getProjects(this);
+    }
+
+    initializeReactGA() {
+        ReactGA.initialize('UA-131375937-1');
+        ReactGA.pageview('/');
     }
 
     postProject = () => {

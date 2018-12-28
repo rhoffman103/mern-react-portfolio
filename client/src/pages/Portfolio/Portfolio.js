@@ -11,6 +11,7 @@ import ProjectArrows from '../../Components/portfolioPageComponents/ProjectArrow
 import API from '../../utils/API';
 import './portfolio.css';
 import '../../breakpoints.css';
+import ReactGA from 'react-ga';
 
 class Portfolio extends Component {
     constructor(props) {
@@ -32,6 +33,11 @@ class Portfolio extends Component {
         this.findProjectMatch();
     }
 
+    initializeReactGA(pathName) {
+        ReactGA.initialize('UA-131375937-1');
+        ReactGA.pageview(`/portfolio/${pathName}`);
+    }
+
     findProjectMatch = () => {
         API.getProjectsList().then(res => {
             if (res.data.length > 0) {
@@ -46,7 +52,7 @@ class Portfolio extends Component {
                         const shouldResetIndexNext = index === lastIndex;
                         const prevIndex = shouldResetIndexPrev ? lastIndex : index - 1;
                         const nextIndex = shouldResetIndexNext ? 0 : index + 1;
-                        
+                        this.initializeReactGA(element.pathName);
                         this.setState({
                             mongoProjects: mongoProjects,
                             currentProject: element,
