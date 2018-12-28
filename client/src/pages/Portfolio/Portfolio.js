@@ -52,6 +52,7 @@ class Portfolio extends Component {
                         const shouldResetIndexNext = index === lastIndex;
                         const prevIndex = shouldResetIndexPrev ? lastIndex : index - 1;
                         const nextIndex = shouldResetIndexNext ? 0 : index + 1;
+                        
                         this.initializeReactGA(element.pathName);
                         this.setState({
                             mongoProjects: mongoProjects,
