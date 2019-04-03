@@ -1,3 +1,5 @@
+require ('dotenv').config();
+
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -19,12 +21,7 @@ const apiRoutes = require('./routes/apiRoutes');
 app.use('/', apiRoutes);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://heroku_wx4v8nwg:9s2fq1os9or5pn1lkrqr295jpd@ds135714.mlab.com:35714/heroku_wx4v8nwg';
-
-// Local DB
-// "mongodb://root:root@192.168.99.100/reactPortfolio?authSource=admin";
-
-
+var MONGODB_URI = process.env.MONGODB_URI || process.env.MONGO_URI;
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
