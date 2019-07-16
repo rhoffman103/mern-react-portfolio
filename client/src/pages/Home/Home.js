@@ -3,7 +3,6 @@ import Intro from '../../Components/intro';
 import AboutMe from '../../Components/About';
 import Skills from '../../Components/Skills';
 import ProjectsGrid from '../../Components/ProjectsGrid';
-import ProjectList from '../../Components/ProjectList';
 import Footer from '../../Components/Footer';
 import MainJS from '../../utils/main';
 import ReactGA from 'react-ga';
@@ -32,23 +31,12 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                <Intro 
-                    smoothScroll={MainJS.scrollToSection}
-                />
+                <Intro smoothScroll={MainJS.scrollToSection} />
                 <MyNav homePage={true} />
                 <AboutMe>
                     <Skills />
                 </AboutMe>
-                <ProjectsGrid>
-                    {this.state.mongoProjects ?
-                    <ProjectList
-                        projects={this.state.mongoProjects}
-                    />
-                    :
-                    <div>something went wrong fetching projects</div>
-                    }
-
-                </ProjectsGrid>
+                <ProjectsGrid projects={this.state.mongoProjects} />
                 <Footer />
             </React.Fragment>
         )
