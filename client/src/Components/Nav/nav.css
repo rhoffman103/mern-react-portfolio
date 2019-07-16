@@ -16,3 +16,15 @@
   border-bottom: 0.5em solid #dbb979;
 }
 
+.nav-link {
+  border-left: 1px solid  #dbb979;
+  border-right: 1px solid  #dbb979;
+}
+
+.nav-link:first-child {
+  border-left: none;
+}
+
+.nav-link:last-child {
+  border-right: none;
+}

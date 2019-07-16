@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Nav from '../../Components/Nav';
+import MyNav from '../../Components/Nav/MyNav';
 import Spinner from '../../Components/Spinner';
 import CarouselSlider from '../../Components/CarouselSlider/SlickSlider';
 import AboutProject from '../../Components/portfolioPageComponents/AboutProject';
@@ -30,6 +30,7 @@ class Portfolio extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.findProjectMatch();
     }
 
@@ -87,9 +88,9 @@ class Portfolio extends Component {
 
         return (
             <div  className="calus-platinum-tint-bg">
+                <MyNav />
                 {this.state.loading ?
                     <React.Fragment>
-                        <Nav />
                         <div className="container spacer">
                             <Spinner />
                         </div>
@@ -98,7 +99,6 @@ class Portfolio extends Component {
                 :
                 (this.state.currentProject ?
                     <React.Fragment>
-                        <Nav />
                         <div className="container restricted-width">
                             <h1 className="mt-1">{this.state.currentProject.title}</h1>
                             <p>{this.state.currentProject.preview}</p>
