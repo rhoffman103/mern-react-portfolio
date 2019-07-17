@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Intro from '../../Components/intro';
 import AboutMe from '../../Components/About';
-import Skills from '../../Components/Skills';
 import ProjectsGrid from '../../Components/ProjectsGrid';
 import Footer from '../../Components/Footer';
 import MainJS from '../../utils/main';
@@ -31,11 +30,9 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                <Intro smoothScroll={MainJS.scrollToSection} />
+                <Intro />
                 <MyNav homePage={true} />
-                <AboutMe>
-                    <Skills />
-                </AboutMe>
+                <AboutMe />
                 <ProjectsGrid projects={this.state.mongoProjects} />
                 <Footer />
             </React.Fragment>

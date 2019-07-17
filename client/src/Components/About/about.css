@@ -17,8 +17,7 @@
     padding-left: 0;
 }
 
-.about-me li {
-    /* float: left; */
+div.icons li {
     padding: 1rem;
     position: relative;
     display: block;
