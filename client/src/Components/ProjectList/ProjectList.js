@@ -1,27 +1,27 @@
 import React from 'react';
+import Row from 'react-bootstrap/Row';
 import Project from '../Project';
 
-class ProjectList extends React.Component {
-    render() {
-        const allProjects = this.props.projects.map((project) => 
-            <Project
-                key={project._id}
-                id={project._id}
-                image={project.image}
-                about={project.about}
-                tags={project.tags}
-                projectPage={project.title}
-                pathName={project.pathName}
-            />
-        );
-        return (
-            <div className="">
-                <ul className="grid-list p-0">
-                    {allProjects}
-                </ul>
-            </div>
-        )
-    }
-}
+const ProjectList = ({ projects }) => {
+    const allProjects = projects.map((project) => 
+        <Project
+            key={project._id}
+            id={project._id}
+            image={project.image}
+            about={project.about}
+            tags={project.tags}
+            projectPage={project.title}
+            pathName={project.pathName}
+        />
+    );
+
+    return (
+        <section className="container">
+            <Row className="justify-content-center">
+                {allProjects}
+            </Row>
+        </section>
+    );
+};
 
 export default ProjectList;

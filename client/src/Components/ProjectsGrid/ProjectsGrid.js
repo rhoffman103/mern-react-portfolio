@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectList from '../ProjectList';
+import Spinner from '../Spinner'
 import MainJS from '../../utils/main';
 import './projectsGrid.css';
 
@@ -22,7 +23,7 @@ class ProjectsGrid extends React.Component {
                     <React.Fragment>
                         <div className="wrapper">
                             <div className="portfolio">
-                                <h2>Portfolio</h2>
+                                <h2 className="text-center text-md-left">Portfolio</h2>
                             </div>
                         </div>
                         <div className="projects">
@@ -30,7 +31,9 @@ class ProjectsGrid extends React.Component {
                         </div>
                     </React.Fragment>
                 :
-                <div>something went wrong fetching projects</div>
+                    <div className="wrapper">
+                        <Spinner />
+                    </div>
                 }
             </div>
         )

@@ -1,33 +1,32 @@
 import React from 'react';
 import './project.css';
-import { Link } from "react-router-dom";
+import Col from 'react-bootstrap/Col';
+import Link from "react-router-dom/Link";
 
-class Project extends React.Component {
+const Project = ({ tags, pathName, image }) => {
 
-    render() {
-        const technologiesList = this.props.tags.map((tag) =>
-            <li key={tag} className="overlay tag">
-                {tag}
-            </li>
-        )
+    const technologiesList = tags.map((tag) =>
+        <li key={tag} className="tag">
+            {tag}
+        </li>
+    );
 
-        const projectLink = `/portfolio/${this.props.pathName}`;
-
-        return (
-            <li className="item p-3">
-                <Link to={projectLink}>
-                    <div className="card card-container card-size shadow">
-                        <img className="card-img-top image" src={require("../../images/" + this.props.image)} alt="project" />
+    return (
+        <Col xs={8} sm={6} md={4} className='mb-3'>
+            <Link to={`/portfolio/${pathName}`}>
+                <div className="card card-container card-size shadow">
+                    <div className="d-flex align-items-center">
+                        <img className="card-img-top image" src={require("../../images/" + image)} alt="project" />
                         <div className="tags">
-                            <ul className="grid-list">
+                            <ul className="d-flex justify-content-center flex-wrap tag-list">
                                 {technologiesList}
                             </ul>
                         </div>
                     </div>
-                </Link>
-            </li>
-        )
-    }
-}
+                </div>
+            </Link>
+        </Col>
+    );
+};
 
 export default Project;
