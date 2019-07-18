@@ -9,7 +9,7 @@ class Technologies extends React.Component {
         )
         return (
             <div className="technologies">
-                <h2>Tech</h2>
+                <h2 className="text-center text-md-left">Tech</h2>
                 <p>Code technologies used in this project.</p>
                 <ul>
                     {technologiesList}

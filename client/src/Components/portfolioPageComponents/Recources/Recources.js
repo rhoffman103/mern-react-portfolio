@@ -3,10 +3,10 @@ import ReactGA from 'react-ga';
 
 const Recources = (props) => (
     <div className="recources">
-        <h2>Recources</h2>
+        <h2 className="text-center text-md-left">Recources</h2>
         <ul>
             <li>
-                Deployed at: 
+                <span className="mr-2">Deployed at:</span>
                 <ReactGA.OutboundLink
                     eventLabel="Deployed Site"
                     to={props.deployed}
@@ -14,12 +14,9 @@ const Recources = (props) => (
                     target="_blank">
                     {props.deployed}
                 </ReactGA.OutboundLink>
-                {/* Deployed at: <a href={props.deployed} rel="noopener noreferrer" target="_blank">
-                    {props.deployed}
-                </a> */}
             </li>
             <li>
-                Github repo: 
+                <span className="mr-2">Github repo:</span>
                 <ReactGA.OutboundLink
                     eventLabel="GitHub"
                     to={props.repo}
@@ -27,9 +24,6 @@ const Recources = (props) => (
                     target="_blank">
                     {props.repo}
                 </ReactGA.OutboundLink>
-                {/* Github repo: <a href={props.repo} rel="noopener noreferrer" target="_blank">
-                    {props.repo}
-                </a> */}
             </li>
         </ul>
     </div>
