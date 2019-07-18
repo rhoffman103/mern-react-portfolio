@@ -11,7 +11,7 @@ const About = () => (
         <Container>
             <div className="wrapper">
                 <div className="about-me">
-                    <h2>About</h2>
+                    <h2 className=" text-center text-md-left" >About</h2>
                     <hr />
 
                     <Row>
