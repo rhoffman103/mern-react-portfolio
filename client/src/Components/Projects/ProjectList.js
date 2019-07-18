@@ -1,6 +1,6 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
-import Project from '../Project';
+import Project from './Project';
 
 const ProjectList = ({ projects }) => {
     const allProjects = projects.map((project) => 

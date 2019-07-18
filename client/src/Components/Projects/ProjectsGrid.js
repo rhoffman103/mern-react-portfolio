@@ -1,8 +1,7 @@
 import React from 'react';
-import ProjectList from '../ProjectList';
+import ProjectList from './ProjectList';
 import Spinner from '../Spinner'
 import MainJS from '../../utils/main';
-import './projectsGrid.css';
 
 class ProjectsGrid extends React.Component {
     constructor(props) {
