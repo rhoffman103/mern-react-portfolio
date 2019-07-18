@@ -100,7 +100,7 @@ class Portfolio extends Component {
                 (this.state.currentProject ?
                     <React.Fragment>
                         <div className="container restricted-width">
-                            <h1 className="mt-1">{this.state.currentProject.title}</h1>
+                            <h1 className="mt-1 text-center text-md-left">{this.state.currentProject.title}</h1>
                             <p>{this.state.currentProject.preview}</p>
                             <CarouselSlider
                                 items={this.state.imgUrls}
