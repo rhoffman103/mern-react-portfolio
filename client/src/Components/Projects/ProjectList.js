@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ProjectsContext from '../../Context/ProjectsContext';
 import Row from 'react-bootstrap/Row';
 import Project from './Project';
 
-const ProjectList = ({ projects }) => {
+const ProjectList = () => {
+    
+    const { projects } = useContext(ProjectsContext);
+
     const allProjects = projects.map((project) => 
         <Project
             key={project._id}

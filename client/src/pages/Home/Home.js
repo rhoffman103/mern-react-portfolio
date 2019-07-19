@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Intro from '../../Components/intro';
 import AboutMe from '../../Components/About';
-import ProjectsGrid from '../../Components/Projects';
+import Projects from '../../Components/Projects';
 import Footer from '../../Components/Footer';
 import ReactGA from 'react-ga';
 import MyNav from '../../Components/Nav/MyNav';
@@ -25,7 +25,7 @@ class Home extends Component {
                 <Intro />
                 <MyNav homePage={true} />
                 <AboutMe />
-                <ProjectsGrid />
+                <Projects />
                 <Footer />
             </React.Fragment>
         )
