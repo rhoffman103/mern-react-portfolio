@@ -64,6 +64,16 @@
   color: #ffdb8d;
 }
 
+.btn-calus-purple {
+  background-color: #461044;
+  color: #dbb979;
+}
+
+.btn-calus-purple:hover {
+  background-color: #dbb979;
+  color: #461044;
+}
+
 .btn:focus {
   border-color: #dbb979;
   box-shadow: inset 0 1px 1px rgba(70, 16, 68, 0.2), 0 0 8px rgba(219, 185, 121, 1);
