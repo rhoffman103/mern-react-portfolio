@@ -1,0 +1,16 @@
+.arrow-bar {
+    height: 3em;
+    margin-bottom: 1em;
+}
+
+.arrow-item {
+    display: inline-block;
+}
+
+.fixed-arrow:hover .prev-next{
+    display: none;
+}
+
+.prev-next {
+    font-size: .65em;
+}
