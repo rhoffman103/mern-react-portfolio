@@ -1,31 +1,30 @@
-
-import API from '../utils/API';
-
-export const GET_PROJECTS = 'GET_PROJECTS';
+export const SET_PROJECTS = 'SET_PROJECTS';
+export const SET_FETCH_ERROR = 'SET_FETCH_ERROR'
 export const FILTER_PROJECTS = 'FILTER_PROJECTS';
 export const FILTER_BY_PATHNAME = 'FILTER_BY_PATHNAME';
 export const GET_NEIGHBOR_PROJECTS = 'GET_NEIGHBOR_PROJECTS';
 
-const getProjects = () => {
-    return new Promise((resolve, reject) => {
-        API.getProjectsList().then(projects => resolve(projects.data));
-    });
-};
-  
-const returnProjects = async () => {
-    const projects = await getProjects();
-    return projects;
+const returnProjects = (state, projects) => {
+    return { ...state, projects };
 };
 
-const filterProjects = ({ filterKeyword, mongoProjects }) => {
-    if (!filterKeyword) return mongoProjects;
+const fetchError = (state) => {
+    return { ...state, projectsFetchError: true };
+};
 
-    const keyword = filterKeyword.toLowerCase().replace(/\s/g, '');
+const filterProjects = (state, filterKeyword) => {
+    if (!filterKeyword) return { ...state, filteredProjects: state.projects };
     
-    return mongoProjects.filter(project => {
+    let  filteredProjects;
+    const keyword = filterKeyword.toLowerCase().replace(/\s/g, '');
+
+    filteredProjects = state.projects.filter(project => {
         const tags = project.tags.map(tag => tag.toLowerCase().replace(/\s/g, ''));
         if (tags.includes(keyword)) return project;
+        return null;
     });
+
+    return { ...state, filteredProjects };
 };
 
 const filterByPathname = ({ pathname, mongoProjects }) => {
@@ -40,6 +39,7 @@ const filterByPathname = ({ pathname, mongoProjects }) => {
             currentProject = project;
             return true;
         }
+        return null;
     });
 
     return currentProject;
@@ -62,10 +62,12 @@ const getNeighborProjects = ({ mongoProjects, project }) => {
 
 const ProjectsReducer = (state, action) => {
     switch(action.type) {
-        case GET_PROJECTS: 
-            return returnProjects();
+        case SET_PROJECTS: 
+            return returnProjects(state, action.projects);
+        case SET_FETCH_ERROR:
+            return fetchError(state);
         case FILTER_PROJECTS:
-            return filterProjects(action);
+            return filterProjects(state, action.filterKeyword);
         case FILTER_BY_PATHNAME:
             return filterByPathname(action);
         case GET_NEIGHBOR_PROJECTS:

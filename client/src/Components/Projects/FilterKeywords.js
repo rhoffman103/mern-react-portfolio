@@ -6,13 +6,12 @@ import Button from 'react-bootstrap/Button';
 const FilterKeywords = () => {
     
     const words = ['all projects', 'full-stack', 'react js', 'handlebars', 'my sql', 'mongo db', 'jquery', 'bootstrap', 'materialize css'];
-    const { mongoProjects, projectsDispatch } = useContext(ProjectsContext)
+    const { stateDispatch } = useContext(ProjectsContext)
     
     const setWord = (clickedKeyword) => {
         if (clickedKeyword === 'all projects') clickedKeyword = null;
-        projectsDispatch({
+        stateDispatch({
             type: FILTER_PROJECTS,
-            mongoProjects,
             filterKeyword: clickedKeyword
         });
     };
