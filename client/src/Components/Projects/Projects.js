@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import ProjectsContext from '../../Context/ProjectsContext';
 import { SET_FETCH_ERROR, SET_PROJECTS } from '../../Reducers/ProjectsReducer';
 import API from '../../utils/API';

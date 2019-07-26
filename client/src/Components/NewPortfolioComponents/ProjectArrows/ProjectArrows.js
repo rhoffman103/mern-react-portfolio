@@ -17,7 +17,7 @@ const ProjectArrows = () => {
                 currentProject
             })
         }
-    }, [currentProject]);
+    }, [currentProject, projects, stateDispatch]);
 
     return (
         <div className="arrow-bar">

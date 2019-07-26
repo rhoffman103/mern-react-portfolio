@@ -30,13 +30,13 @@ const NewPortfolio = () => {
     }, [projectsExist]);
 
     useEffect(() => {
-        if (projectsExist) {
+        if (projectsExist && pathname) {
             stateDispatch({
                 type: FILTER_BY_PATHNAME,
                 pathname
             });
         };
-    }, [pathname]);
+    }, [pathname, projectsExist, stateDispatch]);
 
     return (
         <React.Fragment>
