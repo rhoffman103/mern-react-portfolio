@@ -1,13 +1,23 @@
+ol.carousel-indicators {
+    bottom: -2em;
+}
 
 ol.carousel-indicators li {
     background-color: #461044;
 }
 
-.carousel-indicators .active {
+ol.carousel-indicators .active {
     background-color: #dbb979;
 }
 
+div .carousel-control-prev,
 div .carousel-control-next,
-div .carousel-control-prev {
+div .carousel-control-prev:focus,
+div .carousel-control-next:focus {
+    opacity: .7;
+}
+
+div .carousel-control-next:hover,
+div .carousel-control-prev:hover {
     opacity: 1;
 }

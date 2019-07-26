@@ -4,11 +4,11 @@ import Carousel from 'react-bootstrap/Carousel';
 import './Carousel.css'
 
 const PrevIcon = () => (
-    <span aria-hidden="true" className="calus-gold-text calus-purple-text-hover"><i className="fas fa-angle-left fa-2x"></i></span>
+    <span aria-hidden="true" className="calus-purple-text calus-gold-text-hover"><i className="fas fa-angle-left fa-2x"></i></span>
 )
 
 const NextIcon = () => (
-    <span aria-hidden="true" className="calus-gold-text calus-purple-text-hover"><i className="fas fa-angle-right fa-2x"></i></span>
+    <span aria-hidden="true" className="calus-purple-text calus-gold-text-hover"><i className="fas fa-angle-right fa-2x"></i></span>
 )
 
 const ProjectCarousel = () => {

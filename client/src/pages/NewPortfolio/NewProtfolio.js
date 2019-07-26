@@ -70,7 +70,7 @@ const NewPortfolio = () => {
                 <Footer />
             </div>
         </React.Fragment>
-    )
+    );
 };
 
 export default NewPortfolio;

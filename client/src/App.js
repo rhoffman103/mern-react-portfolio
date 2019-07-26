@@ -5,9 +5,11 @@ import NoMatch from "./pages/NoMatch";
 import NewPortfolio from "./pages/NewPortfolio/NewProtfolio";
 import StateProvider from "./Components/ContextProvider/StateProvider";
 import ScrollToTop from './Components/ScrollToTop';
+import './App.css';
+import './breakpoints.css';
 
 const App = () => (
-	<Router onUpdate={() => window.scrollTo(0, 0)}>
+	<Router>
 		<ScrollToTop>
 			<StateProvider>
 				<Switch>

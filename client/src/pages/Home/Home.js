@@ -6,8 +6,6 @@ import Footer from '../../Components/Footer';
 import ReactGA from 'react-ga';
 import MyNav from '../../Components/Nav/MyNav';
 
-import '../../App.css';
-
 class Home extends Component {
 
     componentDidMount() {

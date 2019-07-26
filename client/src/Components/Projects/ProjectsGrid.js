@@ -10,7 +10,8 @@ const ProjectsGrid = () => {
 
     return (
         <React.Fragment>
-        { state.projects ?
+        { state.projects 
+        ?
             <React.Fragment>
                 <div className="projects">
                     <ProjectList />
@@ -19,12 +20,6 @@ const ProjectsGrid = () => {
         :
             <div className="wrapper">
                 <Spinner />
-            </div>
-        }
-        { state.projectsFetchError &&
-            <div>
-                <h3>Oops!</h3>
-                <p>Something went wrong fetching projects</p>
             </div>
         }
         </React.Fragment>

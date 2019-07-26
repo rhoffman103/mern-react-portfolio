@@ -5,7 +5,7 @@ export const FILTER_BY_PATHNAME = 'FILTER_BY_PATHNAME';
 export const GET_NEIGHBOR_PROJECTS = 'GET_NEIGHBOR_PROJECTS';
 
 const returnProjects = (state, projects) => {
-    return { ...state, projects };
+    return { ...state, projects, projectsFetchError: false };
 };
 
 const fetchError = (state) => {
