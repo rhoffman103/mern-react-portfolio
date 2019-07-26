@@ -69,6 +69,10 @@
   color: #dbb979;
 }
 
+.calus-gold-text-hover:hover {
+  color: #dbb979;
+}
+
 .btn-calus-purple:hover {
   background-color: #dbb979;
   color: #461044;
@@ -85,4 +89,8 @@ button.btn-calus-purple:focus {
 .btn:focus {
   border-color: #dbb979;
   box-shadow: inset 0 1px 1px rgba(70, 16, 68, 0.2), 0 0 8px rgba(219, 185, 121, 1);
+}
+
+a.dom-link {
+  text-decoration: none;
 }
