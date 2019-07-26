@@ -27,14 +27,13 @@ const filterProjects = (state, filterKeyword) => {
     return { ...state, filteredProjects };
 };
 
-const filterByPathname = ({ pathname, mongoProjects }) => {
-    pathname = pathname.toLowerCase();
-
-    if (!mongoProjects.length) return null;
+const filterByPathname = (state, pathname) => {
+    if (!state.projects) return state;
     
+    pathname = pathname.toLowerCase();
     let currentProject = undefined;
     
-    mongoProjects.some((project) => {
+    let noProjectMatch = !state.projects.some((project) => {
         if (project.pathName.toLowerCase() === pathname) {
             currentProject = project;
             return true;
@@ -42,22 +41,22 @@ const filterByPathname = ({ pathname, mongoProjects }) => {
         return null;
     });
 
-    return currentProject;
+    return { ...state, currentProject, noProjectMatch, latestProjectPathname: pathname };
 };
 
-const getNeighborProjects = ({ mongoProjects, project }) => {
+const getNeighborProjects = (state, currentProject) => {
     let neighbors = null;
     
-    const index = mongoProjects.indexOf(project);
-    const lastIndex = mongoProjects.length -1;
+    const index = state.projects.indexOf(currentProject);
+    const lastIndex = state.projects.length -1;
     const shouldResetIndexPrev = index === 0;
     const shouldResetIndexNext = index === lastIndex;
     const prevIndex = shouldResetIndexPrev ? lastIndex : index - 1;
     const nextIndex = shouldResetIndexNext ? 0 : index + 1;
 
-    neighbors = { prevProject: mongoProjects[prevIndex], nextProject: mongoProjects[nextIndex] };
+    neighbors = { prevProject: state.projects[prevIndex], nextProject: state.projects[nextIndex] };
     
-    return neighbors;
+    return { ...state, neighbors };
 };
 
 const ProjectsReducer = (state, action) => {
@@ -69,12 +68,12 @@ const ProjectsReducer = (state, action) => {
         case FILTER_PROJECTS:
             return filterProjects(state, action.filterKeyword);
         case FILTER_BY_PATHNAME:
-            return filterByPathname(action);
+            return filterByPathname(state, action.pathname);
         case GET_NEIGHBOR_PROJECTS:
-            return getNeighborProjects(action);
+            return getNeighborProjects(state, action.currentProject);
         default: 
             return state;
-    }
-}
+    };
+};
 
 export default ProjectsReducer;

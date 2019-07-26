@@ -1,50 +1,44 @@
-import React, { useContext, useReducer, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ProjectsContext from '../../../Context/ProjectsContext';
-import PortfolioContext from '../../../Context/PortfolioContext';
-import ProjectsReducer, { GET_NEIGHBOR_PROJECTS, FILTER_BY_PATHNAME } from '../../../Reducers/ProjectsReducer';
-import Link from 'react-router-dom/Link';
-import Arrow from '../../ImageCarousel/Arrow';
+import { GET_NEIGHBOR_PROJECTS, FILTER_BY_PATHNAME } from '../../../Reducers/ProjectsReducer';
+import { Link } from 'react-router-dom';
+import { Arrow } from './index';
 import './projectArrows.css';
 
 const ProjectArrows = () => {
 
-    const { mongoProjects } = useContext(ProjectsContext);
-    const { project, currentProjectDispatch } = useContext(PortfolioContext);
-    const [neighborProjects, neighborsDispatch] = useReducer(ProjectsReducer, null)
+    const { state, stateDispatch } = useContext(ProjectsContext);
+    const { currentProject, projects } = state;
 
     useEffect(() => {
-        neighborsDispatch({
-            type: GET_NEIGHBOR_PROJECTS,
-            mongoProjects,
-            project
-        })
-    }, [mongoProjects, project])
-
-    const setProject = (project) => {
-        currentProjectDispatch({
-            type: FILTER_BY_PATHNAME,
-            pathname: project.pathName,
-            mongoProjects: project
-        })
-    }
+        if (projects && currentProject) {
+            stateDispatch({
+                type: GET_NEIGHBOR_PROJECTS,
+                currentProject
+            })
+        }
+    }, [currentProject]);
 
     return (
         <div className="arrow-bar">
-            { neighborProjects &&
+            { state.neighbors &&
                 <React.Fragment>
                     <ul className="nav arrow-item">
                         <li className="nav-item">
                             <Link 
-                                to={neighborProjects.prevProject.pathName}
-                                onClick={() => setProject(neighborProjects.prevProject)}
+                                to={state.neighbors.prevProject.pathName}
+                                className='dom-link'
+                                onClick={() => stateDispatch({
+                                    type: FILTER_BY_PATHNAME,
+                                    pathname: state.neighbors.prevProject.pathName
+                                })}
                             >
                                 <Arrow
                                     direction="left"
                                     staticText="previous"
-                                    // clickFunction={neighborProjects.previousProject}
                                     glyph="&#9664;"
                                     arrowPosition="fixed-arrow"
-                                    projectName={neighborProjects.prevProject.title}
+                                    projectName={state.neighbors.prevProject.title}
                                 />
                             </Link>
                         </li>
@@ -52,16 +46,19 @@ const ProjectArrows = () => {
                     <ul className="nav float-right arrow-item">
                         <li className="nav-item">
                             <Link
-                                to={neighborProjects.nextProject.pathName}
-                                onClick={() => setProject(neighborProjects.nextProject)}
+                                to={state.neighbors.nextProject.pathName}
+                                className='dom-link'
+                                onClick={() => stateDispatch({
+                                    type: FILTER_BY_PATHNAME,
+                                    pathname: state.neighbors.nextProject.pathName
+                                })}
                             >
                                 <Arrow
                                     direction="right"
                                     staticText="next"
-                                    // clickFunction={neighborProjects.nextProject}
                                     glyph="&#9654;"
                                     arrowPosition="fixed-arrow"
-                                    projectName={neighborProjects.nextProject.title}
+                                    projectName={state.neighbors.nextProject.title}
                                 />
                             </Link>
                         </li>

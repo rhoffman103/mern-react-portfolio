@@ -3,9 +3,10 @@ import { FILTER_PROJECTS } from '../../Reducers/ProjectsReducer';
 import ProjectsContext from '../../Context/ProjectsContext';
 import Button from 'react-bootstrap/Button';
 
+const words = ['all projects', 'full-stack', 'react js', 'handlebars', 'my sql', 'mongo db', 'jquery', 'bootstrap', 'materialize css'];
+
 const FilterKeywords = () => {
     
-    const words = ['all projects', 'full-stack', 'react js', 'handlebars', 'my sql', 'mongo db', 'jquery', 'bootstrap', 'materialize css'];
     const { stateDispatch } = useContext(ProjectsContext)
     
     const setWord = (clickedKeyword) => {

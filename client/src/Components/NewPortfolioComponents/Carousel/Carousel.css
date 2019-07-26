@@ -1,0 +1,13 @@
+
+ol.carousel-indicators li {
+    background-color: #461044;
+}
+
+.carousel-indicators .active {
+    background-color: #dbb979;
+}
+
+div .carousel-control-next,
+div .carousel-control-prev {
+    opacity: 1;
+}

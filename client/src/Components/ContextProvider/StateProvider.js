@@ -8,7 +8,6 @@ const StateProvider = ({ children }) => {
     const [state, stateDispatch] = useReducer(ProjectsReducer, {});
 
     useEffect(() => {
-        console.log('setting on app load')
         API.getProjectsList()
         .then(res => {
             stateDispatch({
