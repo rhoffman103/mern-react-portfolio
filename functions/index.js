@@ -14,13 +14,10 @@ app.use(bodyParser.json());
 const apiRoutes = require('./routes/apiRoutes');
 app.use('/', apiRoutes);
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || process.env.MONGO_URI;
-
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
 // Connect to the Mongo DB
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
 exports.app = functions.https.onRequest(app);
