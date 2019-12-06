@@ -9,7 +9,7 @@ const MyNav = ({ homePage }) => (
     <header className="sticky-top">
         <Navbar className="calus-purple-bg nav-border-gold navbar-dark" expand="md">
             <div className="container pl-0 pr-0">
-                <Navbar.Brand href="/">Bobby Hoffman</Navbar.Brand>
+                <Link to='/' className='navbar-brand'>Bobby Hoffman</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav className="">
