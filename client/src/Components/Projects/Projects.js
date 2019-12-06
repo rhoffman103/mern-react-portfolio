@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import ProjectsContext from '../../Context/ProjectsContext';
 import { SET_FETCH_ERROR, SET_PROJECTS } from '../../Reducers/ProjectsReducer';
 import API from '../../utils/API';
+import Button from 'react-bootstrap/Button';
 import FilterKeywords from './FilterKeywords';
 import ProjectsGrid from './ProjectsGrid';
-import Button from 'react-bootstrap/Button';
+import Spinner from '../Spinner';
 
 const Projects = () => {
 
@@ -31,25 +32,28 @@ const Projects = () => {
                 <h2 className="text-center text-md-left">Portfolio</h2>
                 <hr />
             </div>
-            { state.projectsFetchError
+            { state.projects
             ?
-                <div className='text-center text-md-left'>
-                    <h3>Oops!</h3>
-                    <p>Something went wrong fetching projects</p>
-                    <Button
-                        variant='calus-purple'
-                        type='button'
-                        className='m-2'
-                        onClick={fetchProjects}
-                    >
-                        Try Again?
-                    </Button>
-                </div>
-            :
-                <>
-                    <FilterKeywords />
-                    <ProjectsGrid />
-                </>
+                state.projectsFetchError
+                ?
+                    <div className='text-center text-md-left'>
+                        <h3>Oops!</h3>
+                        <p>Something went wrong fetching projects</p>
+                        <Button
+                            variant='calus-purple'
+                            type='button'
+                            className='m-2'
+                            onClick={fetchProjects}
+                        >
+                            Try Again?
+                        </Button>
+                    </div>
+                :
+                    <>
+                        <FilterKeywords />
+                        <ProjectsGrid />
+                    </>
+            :   <Spinner />
             }
         </div>
     );
