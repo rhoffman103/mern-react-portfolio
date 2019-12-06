@@ -8,6 +8,7 @@
     "start": "npm run start:dev",
     "start:dev": "concurrently \"npm run functions\" \"npm run client\"",
     "functions": "cd functions && npm run serve",
+    "emulate": "firebase serve --only functions,hosting",
     "client": "cd client && yarn run start",
     "install": "cd client && yarn install",
     "build": "cd client && npm run build"
