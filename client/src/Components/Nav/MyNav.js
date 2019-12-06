@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import MainJS from '../../utils/main';
 import './nav.css';
@@ -21,7 +22,7 @@ const MyNav = ({ homePage }) => (
                                 </React.Fragment>
                             :
                                 <React.Fragment>
-                                    <Nav.Link href="/" className="pl-2 pr-2 pt-0 pb-0">Home</Nav.Link>
+                                    <Link to="/" className="nav-link pl-2 pr-2 pt-0 pb-0">Home</Link>
                                 </React.Fragment>
                             }
                         </div>
