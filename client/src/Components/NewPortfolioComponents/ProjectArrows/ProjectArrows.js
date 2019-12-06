@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import ProjectsContext from '../../../Context/ProjectsContext';
-import { GET_NEIGHBOR_PROJECTS, FILTER_BY_PATHNAME } from '../../../Reducers/ProjectsReducer';
+import { GET_NEIGHBOR_PROJECTS } from '../../../Reducers/ProjectsReducer';
 import { Link } from 'react-router-dom';
 import { Arrow } from './index';
 import './projectArrows.css';
@@ -28,10 +28,6 @@ const ProjectArrows = () => {
                             <Link 
                                 to={state.neighbors.prevProject.pathName}
                                 className='dom-link'
-                                onClick={() => stateDispatch({
-                                    type: FILTER_BY_PATHNAME,
-                                    pathname: state.neighbors.prevProject.pathName
-                                })}
                             >
                                 <Arrow
                                     direction="left"
@@ -48,10 +44,6 @@ const ProjectArrows = () => {
                             <Link
                                 to={state.neighbors.nextProject.pathName}
                                 className='dom-link'
-                                onClick={() => stateDispatch({
-                                    type: FILTER_BY_PATHNAME,
-                                    pathname: state.neighbors.nextProject.pathName
-                                })}
                             >
                                 <Arrow
                                     direction="right"

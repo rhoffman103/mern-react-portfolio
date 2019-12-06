@@ -11,10 +11,9 @@ import ProjectArrows from '../../Components/NewPortfolioComponents/ProjectArrows
 import Footer from '../../Components/Footer';
 import Spinner from '../../Components/Spinner';
 
-const NewPortfolio = () => {
+const NewPortfolio = ({ location }) => {
 
     const { state, stateDispatch } = useContext(ProjectsContext);
-    const [pathname, setPathname] = useState(null);
     const [projectsExist, setProjectsExist] = useState();
 
     useEffect(() => {
@@ -25,18 +24,12 @@ const NewPortfolio = () => {
 
     useEffect(() => {
         if (projectsExist) {
-            setPathname(window.location.pathname.split("/").pop());
-        }
-    }, [projectsExist]);
-
-    useEffect(() => {
-        if (projectsExist && pathname) {
             stateDispatch({
                 type: FILTER_BY_PATHNAME,
-                pathname
+                pathname: location.pathname
             });
         };
-    }, [pathname, projectsExist, stateDispatch]);
+    }, [projectsExist, location, stateDispatch]);
 
     return (
         <React.Fragment>
