@@ -13,7 +13,7 @@ const Project = ({ tags, pathName, image }) => {
 
     return (
         <Col xs={8} sm={6} md={4} className='mb-3'>
-            <Link to={`/portfolio/${pathName}`}>
+            <Link to={pathName}>
                 <div className="card card-container card-size shadow">
                     <div className="d-flex align-items-center">
                         <img className="card-img-top image" src={require("../../images/" + image)} alt="project" />
