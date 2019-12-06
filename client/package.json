@@ -4,7 +4,6 @@
   "description": "mern portfolio",
   "private": true,
   "proxy": "http://localhost:3001",
-  "homepage": "https://bobbyhoffman.dev/",
   "dependencies": {
     "axios": "^0.19.0",
     "react": "^16.8.6",
