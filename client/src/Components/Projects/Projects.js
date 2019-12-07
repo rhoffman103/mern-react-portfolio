@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import ProjectsContext from '../../Context/ProjectsContext';
-import { SET_FETCH_ERROR, SET_PROJECTS } from '../../Reducers/ProjectsReducer';
-import API from '../../utils/API';
+import useFetchProjects from '../../CustomHooks/useFetchProjects';
 import Button from 'react-bootstrap/Button';
 import FilterKeywords from './FilterKeywords';
 import ProjectsGrid from './ProjectsGrid';
@@ -10,21 +9,7 @@ import Spinner from '../Spinner';
 const Projects = () => {
 
     const { state, stateDispatch } = useContext(ProjectsContext);
-
-    const fetchProjects = () => {
-        API.getProjectsList()
-        .then(res => {
-            stateDispatch({
-                type: SET_PROJECTS,
-                projects: res.data
-            });
-        })
-        .catch(() => {
-            stateDispatch({
-                type: SET_FETCH_ERROR
-            });
-        });
-    };
+    const fetchProjects = useFetchProjects();
 
     return (
         <div className="container ptb-100" id="portfolio">
@@ -43,7 +28,7 @@ const Projects = () => {
                             variant='calus-purple'
                             type='button'
                             className='m-2'
-                            onClick={fetchProjects}
+                            onClick={() => fetchProjects(stateDispatch)}
                         >
                             Try Again?
                         </Button>
