@@ -1,25 +1,16 @@
 import React, { useEffect, useReducer } from 'react';
 import ProjectsContext from '../../Context/ProjectsContext';
-import ProjectsReducer, { SET_PROJECTS, SET_FETCH_ERROR } from '../../Reducers/ProjectsReducer';
-import API from '../../utils/API';
+import useFetchProjects from '../../CustomHooks/useFetchProjects';
+import ProjectsReducer from '../../Reducers/ProjectsReducer';
 
 const StateProvider = ({ children }) => {
 
     const [state, stateDispatch] = useReducer(ProjectsReducer, {});
+    const fetchProjects = useFetchProjects();
 
     useEffect(() => {
-        API.getProjectsList()
-        .then(res => {
-            stateDispatch({
-                type: SET_PROJECTS,
-                projects: res.data
-            });
-        })
-        .catch(() => {
-            stateDispatch({
-                type: SET_FETCH_ERROR
-            });
-        });
+        fetchProjects(stateDispatch);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
