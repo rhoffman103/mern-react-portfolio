@@ -4,7 +4,10 @@ const router = express.Router();
 
 router.get('/api/v1/projects', (req, res) => {
     db.Project.find({})
-    .then((dbProjects) => res.json(dbProjects))
+    .then((dbProjects) => {
+        res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
+        return res.json(dbProjects);
+    })
     .catch((err) => res.json(err));
 });
 
